@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %} 用户主页 {% endblock %}
+
+{% block link %}
+	<a href="{{ url_for('manager_users') }}"> 返回  </a>  |
+	<a href="{{ url_for('manger_user_modify', id=user.user_id)}}"> 修改 </a> | 
+	<a href="{{ url_for('manger_user_delete', id=user.user_id)}}"> 注销 </a>
+{% endblock %}
+{% block body  %}
+	<h2> 用户信息 </h2>
+	{% if user %}
+	<li> 用户名 {{user.user_name}} </li>
+	<li> 学院名 {{user.college}} </li>
+	<li> 学号 {{user.num}} </li>
+	<li> 邮箱 {{user.email}} </li>
+	{% endif %}
+
+{% endblock %}

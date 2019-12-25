@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="book">
+  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.17">
+    <root id="1">
+      <ServerVersion>3.25.1</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="books"/>
+    <table id="7" parent="2" name="borrows"/>
+    <table id="8" parent="2" name="historys"/>
+    <table id="9" parent="2" name="histroys"/>
+    <table id="10" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="11" parent="2" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <table id="12" parent="2" name="users"/>
+    <column id="13" parent="6" name="book_id">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="14" parent="6" name="book_name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="15" parent="6" name="author">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="6" name="publish_com">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="6" name="publish_date">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="18" parent="6" name="sqlite_autoindex_books_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>book_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="19" parent="6">
+      <ColNames>book_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_books_1</UnderlyingIndexName>
+    </key>
+    <column id="20" parent="7" name="user_name">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="7" name="book_id">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="7" name="date_borrow">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="7" name="date_return">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="24" parent="7" name="sqlite_autoindex_borrows_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_name
+book_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="25" parent="7">
+      <ColNames>user_name
+book_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_borrows_1</UnderlyingIndexName>
+    </key>
+    <column id="26" parent="8" name="book_id">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="8" name="user_name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="8" name="date_borrow">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="8" name="date_return">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="30" parent="8" name="status">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;not return&apos;</DefaultExpression>
+    </column>
+    <index id="31" parent="8" name="sqlite_autoindex_historys_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_name
+book_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="32" parent="8">
+      <ColNames>user_name
+book_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_historys_1</UnderlyingIndexName>
+    </key>
+    <column id="33" parent="9" name="histroy_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="34" parent="9" name="book_id">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="9" name="user_name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="9" name="date_borrow">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="9" name="date_return">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="38" parent="9" name="status">
+      <Position>6</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;not return&apos;</DefaultExpression>
+    </column>
+    <key id="39" parent="9">
+      <ColNames>histroy_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="40" parent="10" name="type">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="41" parent="10" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="42" parent="10" name="tbl_name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="43" parent="10" name="rootpage">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="44" parent="10" name="sql">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="45" parent="11" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="46" parent="11" name="seq">
+      <Position>2</Position>
+    </column>
+    <column id="47" parent="12" name="user_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="48" parent="12" name="user_name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="12" name="pwd">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="12" name="college">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="51" parent="12" name="num">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="52" parent="12" name="email">
+      <Position>6</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <key id="53" parent="12">
+      <ColNames>user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

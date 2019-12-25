@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block title %} 欢迎使用 {% endblock %}
+{% block link %} 
+	<a href="{{url_for('logout')}}"> 注销[{{g.user}}] </a> | 
+	<a href="{{url_for('reader_query')}}"> 查询 </a> | 
+	<a href="{{url_for('reader_info')}}"> 查看个人信息 </a> |
+	<a href="{{url_for('reader_histroy')}}"> 查看阅读记录 </a>
+
+{% endblock %}
+
+{% block body %}
+	<h2> 欢迎使用 </h2>
+{% endblock %}

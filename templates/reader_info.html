@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %} 个人主页 {% endblock %}
+
+{% block link %}
+	<a href="{{ url_for('reader') }}"> 返回  </a>  |
+	<a href="{{ url_for('reader_modify')}}"> 修改 </a>
+{% endblock %}
+{% block body  %}
+	<h2> 用户信息 </h2>
+	{% if user %}
+	<li> 用户名 {{user.user_name}} </li>
+	<li> 学院名 {{user.college}} </li>
+	<li> 学号 {{user.num}} </li>
+	<li> 邮箱 {{user.email}} </li>
+	{% endif %}
+
+{% endblock %}
